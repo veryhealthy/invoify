@@ -25,20 +25,22 @@ const InvoiceSummary = () => {
                         <SignatureModal />
                     </SignatureContextProvider>
 
-                    {/* Additional notes & Payment terms */}
+                    {/* Additional notes */}
                     <FormTextarea
                         name="details.additionalNotes"
                         label={_t("form.steps.summary.additionalNotes")}
                         placeholder="Your additional notes"
                     />
+
+                    {/* Termes et conditions */}
                     <FormTextarea
                         name="details.paymentTerms"
-                        label={_t("form.steps.summary.paymentTerms")}
-                        placeholder="Ex: Net 30"
+                        label={_t("form.steps.summary.termsAndConditions")}
+                        placeholder="Acompte de 50% à la signature&#10;Solde à la livraison&#10;Paiement sous 30 jours"
                     />
                 </div>
 
-                {/* Final charges */}
+                {/* Total */}
                 <Charges />
             </div>
         </section>

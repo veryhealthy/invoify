@@ -10,8 +10,8 @@ export const ENV = process.env.NODE_ENV;
  * Websites
  */
 export const BASE_URL = "https://invoify.vercel.app";
-export const AUTHOR_WEBSITE = "https://aliabb.vercel.app";
-export const AUTHOR_GITHUB = "https://github.com/al1abb";
+export const AUTHOR_WEBSITE = "https://veryhealthy.blog";
+export const AUTHOR_GITHUB = "https://github.com/veryhealthy";
 
 /**
  * API endpoints
@@ -23,8 +23,7 @@ export const EXPORT_INVOICE_API = "/api/invoice/export";
 /**
  * External API endpoints
  */
-export const CURRENCIES_API =
-  "https://openexchangerates.org/api/currencies.json";
+export const CURRENCIES_API = "https://openexchangerates.org/api/currencies.json";
 
 /**
  * Local storage
@@ -34,8 +33,7 @@ export const LOCAL_STORAGE_INVOICE_DRAFT_KEY = "invoify:invoiceDraft";
 /**
  * Tailwind
  */
-export const TAILWIND_CDN =
-  "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css";
+export const TAILWIND_CDN = "https://cdn.tailwindcss.com";
 
 /**
  * Google
@@ -52,20 +50,8 @@ export const NODEMAILER_PW = process.env.NODEMAILER_PW;
  * I18N
  */
 export const LOCALES = [
-  { code: "en", name: "English" },
-  { code: "de", name: "Deutsch" },
-  { code: "it", name: "Italiano" },
-  { code: "es", name: "Español" },
-  { code: "ca", name: "Català" },
-  { code: "fr", name: "Français" },
-  { code: "ar", name: "العربية" },
-  { code: "pl", name: "Polish" },
-  { code: "pt-BR", name: "Português (Brasil)" },
-  { code: "tr", name: "Türkçe" },
-  { code: "zh-CN", name: "简体中文" },
-  { code: "ja", name: "日本語" },
-  { code: "nb-NO", name: "Norwegian (bokmål)" },
-  { code: "nn-NO", name: "Norwegian (nynorsk)" },
+    { code: "fr", name: "Français" },
+    { code: "en", name: "English" },
 ];
 export const DEFAULT_LOCALE = LOCALES[0].code;
 
@@ -73,109 +59,90 @@ export const DEFAULT_LOCALE = LOCALES[0].code;
  * Signature variables
  */
 export const SIGNATURE_COLORS: SignatureColor[] = [
-  { name: "black", label: "Black", color: "rgb(0, 0, 0)" },
-  { name: "dark blue", label: "Dark Blue", color: "rgb(0, 0, 128)" },
-  {
-    name: "crimson",
-    label: "Crimson",
-    color: "#DC143C",
-  },
+    { name: "black", label: "Black", color: "rgb(0, 0, 0)" },
+    { name: "dark blue", label: "Dark Blue", color: "rgb(0, 0, 128)" },
+    {
+        name: "crimson",
+        label: "Crimson",
+        color: "#DC143C",
+    },
 ];
 
 export const SIGNATURE_FONTS: SignatureFont[] = [
-  {
-    name: "Dancing Script",
-    variable: "var(--font-dancing-script)",
-  },
-  { name: "Parisienne", variable: "var(--font-parisienne)" },
-  {
-    name: "Great Vibes",
-    variable: "var(--font-great-vibes)",
-  },
-  {
-    name: "Alex Brush",
-    variable: "var(--font-alex-brush)",
-  },
+    {
+        name: "Dancing Script",
+        variable: "var(--font-dancing-script)",
+    },
+    { name: "Parisienne", variable: "var(--font-parisienne)" },
+    {
+        name: "Great Vibes",
+        variable: "var(--font-great-vibes)",
+    },
+    {
+        name: "Alex Brush",
+        variable: "var(--font-alex-brush)",
+    },
 ];
 
 /**
  * Form date options
  */
 export const DATE_OPTIONS: Intl.DateTimeFormatOptions = {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
 };
 
 export const SHORT_DATE_OPTIONS: Intl.DateTimeFormatOptions = {
-  year: "numeric",
-  month: "short",
-  day: "numeric",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
 };
 
 /**
  * Form defaults
  */
 export const FORM_DEFAULT_VALUES = {
-  sender: {
-    name: "",
-    address: "",
-    zipCode: "",
-    city: "",
-    country: "",
-    email: "",
-    phone: "",
-    customInputs: [],
-  },
-  receiver: {
-    name: "",
-    address: "",
-    zipCode: "",
-    city: "",
-    country: "",
-    email: "",
-    phone: "",
-    customInputs: [],
-  },
-  details: {
-    invoiceLogo: "",
-    invoiceNumber: "",
-    invoiceDate: "",
-    dueDate: "",
-    items: [
-      {
+    sender: {
         name: "",
-        description: "",
-        quantity: 0,
-        unitPrice: 0,
-        total: 0,
-      },
-    ],
-    currency: "USD",
-    language: "English",
-    taxDetails: {
-      amount: 0,
-      amountType: "amount",
-      taxID: "",
+        address: "",
+        zipCode: "",
+        city: "",
+        country: "",
+        email: "",
+        phone: "",
+        customInputs: [],
     },
-    discountDetails: {
-      amount: 0,
-      amountType: "amount",
+    receiver: {
+        name: "",
+        address: "",
+        zipCode: "",
+        city: "",
+        country: "",
+        email: "",
+        phone: "",
+        customInputs: [],
     },
-    shippingDetails: {
-      cost: 0,
-      costType: "amount",
+    details: {
+        invoiceLogo: "",
+        invoiceNumber: "",
+        invoiceDate: "",
+        dueDate: "",
+        items: [
+            {
+                name: "",
+                description: "",
+                quantity: 0,
+                unitPrice: 0,
+                total: 0,
+            },
+        ],
+        currency: "EUR",
+        language: "Français",
+        additionalNotes: "",
+        paymentTerms: "Acompte de 50% à la signature\nSolde à la livraison\nPaiement sous 30 jours",
+        pdfTemplate: 1,
     },
-    paymentInformation: {
-      bankName: "",
-      accountName: "",
-      accountNumber: "",
-    },
-    additionalNotes: "",
-    paymentTerms: "",
-    totalAmountInWords: "",
-    pdfTemplate: 1,
-  },
 };
 
 /**
@@ -183,80 +150,61 @@ export const FORM_DEFAULT_VALUES = {
  * Form auto fill values for testing
  */
 export const FORM_FILL_VALUES = {
-  sender: {
-    name: "John Doe",
-    address: "123 Main St",
-    zipCode: "12345",
-    city: "Anytown",
-    country: "USA",
-    email: "johndoe@example.com",
-    phone: "123-456-7890",
-  },
-  receiver: {
-    name: "Jane Smith",
-    address: "456 Elm St",
-    zipCode: "54321",
-    city: "Other Town",
-    country: "Canada",
-    email: "janesmith@example.com",
-    phone: "987-654-3210",
-  },
-  details: {
-    invoiceLogo: "",
-    invoiceNumber: "INV0001",
-    invoiceDate: new Date(),
-    dueDate: new Date(),
-    items: [
-      {
-        name: "Product 1",
-        description: "Description of Product 1",
-        quantity: 4,
-        unitPrice: 50,
-        total: 200,
-      },
-      {
-        name: "Product 2",
-        description: "Description of Product 2",
-        quantity: 5,
-        unitPrice: 50,
-        total: 250,
-      },
-      {
-        name: "Product 3",
-        description: "Description of Product 3",
-        quantity: 5,
-        unitPrice: 80,
-        total: 400,
-      },
-    ],
-    currency: "USD",
-    language: "English",
-    taxDetails: {
-      amount: 15,
-      amountType: "percentage",
-      taxID: "987654321",
+    sender: {
+        name: "Martin Duchamp",
+        address: "48 rue de la Mairie",
+        zipCode: "69400",
+        city: "Villefranche-sur-Saône",
+        country: "FR",
+        email: "johndoe@example.com",
+        phone: "07 43 34 54 34",
     },
-    discountDetails: {
-      amount: 5,
-      amountType: "percentage",
+    receiver: {
+        name: "Jane Smith",
+        address: "456 Elm St",
+        zipCode: "54321",
+        city: "Other Town",
+        country: "Canada",
+        email: "janesmith@example.com",
+        phone: "987-654-3210",
     },
-    shippingDetails: {
-      cost: 5,
-      costType: "percentage",
+    details: {
+        invoiceLogo: "",
+        invoiceNumber: "1",
+        invoiceDate: new Date(),
+        dueDate: new Date(),
+        items: [
+            {
+                name: "Product 1",
+                description: "Description of Product 1",
+                quantity: 4,
+                unitPrice: 50,
+                total: 200,
+            },
+            {
+                name: "Product 2",
+                description: "Description of Product 2",
+                quantity: 5,
+                unitPrice: 50,
+                total: 250,
+            },
+            {
+                name: "Product 3",
+                description: "Description of Product 3",
+                quantity: 5,
+                unitPrice: 80,
+                total: 400,
+            },
+        ],
+        currency: "EUR",
+        language: "Français",
+        additionalNotes: "Merci pour votre confiance",
+        paymentTerms: "Acompte de 50% à la signature\nSolde à la livraison\nPaiement sous 30 jours",
+        signature: {
+            data: "",
+        },
+        subTotal: "850",
+        totalAmount: "850",
+        pdfTemplate: 1,
     },
-    paymentInformation: {
-      bankName: "Bank Inc.",
-      accountName: "John Doe",
-      accountNumber: "445566998877",
-    },
-    additionalNotes: "Thank you for your business",
-    paymentTerms: "Net 30",
-    signature: {
-      data: "",
-    },
-    subTotal: "850",
-    totalAmount: "850",
-    totalAmountInWords: "Eight Hundred Fifty",
-    pdfTemplate: 1,
-  },
 };

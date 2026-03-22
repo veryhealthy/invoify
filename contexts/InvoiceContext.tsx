@@ -89,7 +89,7 @@ export const InvoiceContextProvider = ({
 
   useEffect(() => {
     let savedInvoicesDefault;
-    if (typeof window !== undefined) {
+    if (typeof window !== "undefined") {
       // Saved invoices variables
       const savedInvoicesJSON = window.localStorage.getItem("savedInvoices");
       savedInvoicesDefault = savedInvoicesJSON
@@ -248,7 +248,7 @@ export const InvoiceContextProvider = ({
       // If get values function is provided, allow to save the invoice
       if (getValues) {
         // Retrieve the existing array from local storage or initialize an empty array
-        const savedInvoicesJSON = localStorage.getItem("savedInvoices");
+        const savedInvoicesJSON = window.localStorage.getItem("savedInvoices");
         const savedInvoices = savedInvoicesJSON
           ? JSON.parse(savedInvoicesJSON)
           : [];
@@ -283,7 +283,7 @@ export const InvoiceContextProvider = ({
           saveInvoiceSuccess();
         }
 
-        localStorage.setItem("savedInvoices", JSON.stringify(savedInvoices));
+        window.localStorage.setItem("savedInvoices", JSON.stringify(savedInvoices));
 
         setSavedInvoices(savedInvoices);
       }
@@ -304,7 +304,7 @@ export const InvoiceContextProvider = ({
 
       const updatedInvoicesJSON = JSON.stringify(updatedInvoices);
 
-      localStorage.setItem("savedInvoices", updatedInvoicesJSON);
+      window.localStorage.setItem("savedInvoices", updatedInvoicesJSON);
     }
   };
 

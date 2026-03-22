@@ -4,19 +4,19 @@
         "description": "Générer une facture",
         "newInvBadge": "Nouvelle facture",
         "wizard": {
-            "fromAndTo": "De & À",
-            "invoiceDetails": "Détails de la facture",
+            "fromAndTo": "Cible",
+            "invoiceDetails": "Détails",
             "lineItems": "Articles",
-            "paymentInfo": "Informations de paiement",
             "summary": "Résumé",
             "next": "Suivant",
             "back": "Retour"
         },
         "steps": {
             "fromAndTo": {
-                "billFrom": "Facturé de",
+                "billFrom": "Facturé par",
                 "billTo": "Facturé à",
-                "name": "Nom/Prénom:",
+                "name": "Nom/Prénom",
+                "siret": "Numéro de SIRET",
                 "address": "Adresse",
                 "zipCode": "Code postal",
                 "city": "Ville",
@@ -49,12 +49,6 @@
                 "addNewItem": "Ajouter un nouvel article",
                 "removeItem": "Supprimer l'article"
             },
-            "paymentInfo": {
-                "heading": "Informations de paiement",
-                "bankName": "Nom de la banque",
-                "accountName": "Nom du compte",
-                "accountNumber": "Numéro de compte"
-            },
             "summary": {
                 "heading": "Résumé",
                 "signature": {
@@ -66,15 +60,8 @@
                     "upload": "Télécharger"
                 },
                 "additionalNotes": "Notes supplémentaires",
-                "paymentTerms": "Conditions de paiement",
-                "discount": "Remise",
-                "tax": "Taxe",
-                "shipping": "Expédition",
-                "subTotal": "Sous-total",
-                "totalAmount": "Montant total",
-                "includeTotalInWords": "Inclure le total en mots?",
-                "yes": "Oui",
-                "no": "Non"
+                "termsAndConditions": "Termes et conditions",
+                "totalAmount": "Montant total"
             }
         }
     },

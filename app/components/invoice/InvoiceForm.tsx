@@ -6,28 +6,14 @@ import { useMemo } from "react";
 import { useFormContext, useWatch } from "react-hook-form";
 
 // ShadCn
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 // React Wizard
 import { Wizard } from "react-use-wizard";
 
 // Components
-import {
-    WizardStep,
-    BillFromSection,
-    BillToSection,
-    InvoiceDetails,
-    Items,
-    PaymentInformation,
-    InvoiceSummary,
-} from "@/app/components";
+import { WizardStep, BillFromSection, BillToSection, InvoiceDetails, Items, InvoiceSummary } from "@/app/components";
 
 // Contexts
 import { useTranslationContext } from "@/contexts/TranslationContext";
@@ -52,19 +38,15 @@ const InvoiceForm = () => {
     }, [invoiceNumber]);
 
     return (
-        <div className={`xl:w-[55%]`}>
+        <div className="overflow-hidden">
             <Card>
                 <CardHeader>
                     <div className="flex gap-3">
                         <CardTitle className="flex items-center gap-3">
-                            <span className="uppercase">
-                                {_t("form.title")}
-                            </span>
+                            <span className="uppercase">{_t("form.title")}</span>
                         </CardTitle>
                         <Badge variant="secondary" className="w-fit">
-                            <p style={{ fontSize: "14px" }}>
-                                {invoiceNumberLabel}
-                            </p>
+                            <p style={{ fontSize: "14px" }}>{invoiceNumberLabel}</p>
                         </Badge>
                     </div>
                     <CardDescription>{_t("form.description")}</CardDescription>
@@ -73,7 +55,7 @@ const InvoiceForm = () => {
                     <div className="space-y-8">
                         <Wizard>
                             <WizardStep>
-                                <div className="flex gap-x-20 gap-y-10">
+                                <div className="flex flex-wrap gap-x-10 gap-y-10">
                                     <BillFromSection />
 
                                     <BillToSection />
@@ -87,10 +69,6 @@ const InvoiceForm = () => {
 
                             <WizardStep>
                                 <Items />
-                            </WizardStep>
-
-                            <WizardStep>
-                                <PaymentInformation />
                             </WizardStep>
 
                             <WizardStep>

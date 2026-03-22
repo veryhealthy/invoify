@@ -4,12 +4,7 @@
 import { useFieldArray, useFormContext } from "react-hook-form";
 
 // Components
-import {
-    BaseButton,
-    FormCustomInput,
-    FormInput,
-    Subheading,
-} from "@/app/components";
+import { BaseButton, FormCustomInput, FormInput, Subheading } from "@/app/components";
 
 // Contexts
 import { useTranslationContext } from "@/contexts/TranslationContext";
@@ -42,36 +37,13 @@ const BillFromSection = () => {
     return (
         <section className="flex flex-col gap-3">
             <Subheading>{_t("form.steps.fromAndTo.billFrom")}:</Subheading>
-            <FormInput
-                name="sender.name"
-                label={_t("form.steps.fromAndTo.name")}
-                placeholder="Your name"
-            />
-            <FormInput
-                name="sender.address"
-                label={_t("form.steps.fromAndTo.address")}
-                placeholder="Your address"
-            />
-            <FormInput
-                name="sender.zipCode"
-                label={_t("form.steps.fromAndTo.zipCode")}
-                placeholder="Your zip code"
-            />
-            <FormInput
-                name="sender.city"
-                label={_t("form.steps.fromAndTo.city")}
-                placeholder="Your city"
-            />
-            <FormInput
-                name="sender.country"
-                label={_t("form.steps.fromAndTo.country")}
-                placeholder="Your country"
-            />
-            <FormInput
-                name="sender.email"
-                label={_t("form.steps.fromAndTo.email")}
-                placeholder="Your email"
-            />
+            <FormInput name="sender.name" label={_t("form.steps.fromAndTo.name")} placeholder="Your name" />
+            <FormInput name="sender.siret" label={_t("form.steps.fromAndTo.siret")} placeholder="Your business SIRET" />
+            <FormInput name="sender.address" label={_t("form.steps.fromAndTo.address")} placeholder="Your address" />
+            <FormInput name="sender.zipCode" label={_t("form.steps.fromAndTo.zipCode")} placeholder="Your zip code" />
+            <FormInput name="sender.city" label={_t("form.steps.fromAndTo.city")} placeholder="Your city" />
+            <FormInput name="sender.country" label={_t("form.steps.fromAndTo.country")} placeholder="Your country" />
+            <FormInput name="sender.email" label={_t("form.steps.fromAndTo.email")} placeholder="Your email" />
             <FormInput
                 name="sender.phone"
                 label={_t("form.steps.fromAndTo.phone")}

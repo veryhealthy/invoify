@@ -5,9 +5,8 @@
         "newInvBadge": "New Invoice",
         "wizard": {
             "fromAndTo": "From & To",
-            "invoiceDetails": "Invoice Details",
+            "invoiceDetails": "Details",
             "lineItems": "Line Items",
-            "paymentInfo": "Payment Info",
             "summary": "Summary",
             "next": "Next",
             "back": "Back"
@@ -17,6 +16,7 @@
                 "billFrom": "Bill From",
                 "billTo": "Bill To",
                 "name": "Name",
+                "siret": "Business number",
                 "address": "Address",
                 "zipCode": "Zip",
                 "city": "City",
@@ -49,12 +49,6 @@
                 "addNewItem": "Add a new item",
                 "removeItem": "Remove item"
             },
-            "paymentInfo": {
-                "heading": "Payment Information",
-                "bankName": "Bank Name",
-                "accountName": "Account Name",
-                "accountNumber": "Account Number"
-            },
             "summary": {
                 "heading": "Summary",
                 "signature": {
@@ -66,15 +60,8 @@
                     "upload": "Upload"
                 },
                 "additionalNotes": "Additional Notes",
-                "paymentTerms": "Payment Terms",
-                "discount": "Discount",
-                "tax": "Tax",
-                "shipping": "Shipping",
-                "subTotal": "Subtotal",
-                "totalAmount": "Total Amount",
-                "includeTotalInWords": "Include Total in Words?",
-                "yes": "Yes",
-                "no": "No"
+                "termsAndConditions": "Terms & Conditions",
+                "totalAmount": "Total Amount"
             }
         }
     },

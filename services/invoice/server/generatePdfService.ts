@@ -29,9 +29,20 @@ export async function generatePdfService(req: NextRequest) {
         const ReactDOMServer = (await import("react-dom/server")).default;
         const templateId = body.details.pdfTemplate;
         const InvoiceTemplate = await getInvoiceTemplate(templateId);
-        const htmlTemplate = ReactDOMServer.renderToStaticMarkup(
+        const bodyMarkup = ReactDOMServer.renderToStaticMarkup(
             InvoiceTemplate(body)
         );
+
+        const htmlTemplate = `<!DOCTYPE html>
+<html>
+<head>
+  <script src="${TAILWIND_CDN}"></script>
+  <style>html, body { background-color: #f8f6f2; margin: 0; padding: 0; }</style>
+</head>
+<body>
+  ${bodyMarkup}
+</body>
+</html>`;
 
 		if (ENV === "production") {
 			const puppeteer = (await import("puppeteer-core")).default;
@@ -53,13 +64,9 @@ export async function generatePdfService(req: NextRequest) {
         }
 
         page = await browser.newPage();
-        await page.setContent(await htmlTemplate, {
+        await page.setContent(htmlTemplate, {
             waitUntil: ["networkidle0", "load", "domcontentloaded"],
             timeout: 30000,
-        });
-
-        await page.addStyleTag({
-            url: TAILWIND_CDN,
         });
 
 		const pdf: Uint8Array = await page.pdf({

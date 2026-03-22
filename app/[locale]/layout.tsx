@@ -5,13 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 // Contexts
 import Providers from "@/contexts/Providers";
 // Fonts
-import {
-    alexBrush,
-    dancingScript,
-    greatVibes,
-    outfit,
-    parisienne,
-} from "@/lib/fonts";
+import { alexBrush, dancingScript, geistSans, greatVibes, openSauceSans, parisienne } from "@/lib/fonts";
 // SEO
 import { JSONLD, ROOTKEYWORDS } from "@/lib/seo";
 // Variables
@@ -27,8 +21,7 @@ import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
     title: "Invoify | Free Invoice Generator",
-    description:
-        "Create invoices effortlessly with Invoify, the free invoice generator. Try it now!",
+    description: "Create invoices effortlessly with Invoify, the free invoice generator. Try it now!",
     icons: [{ rel: "icon", url: Favicon.src }],
     keywords: ROOTKEYWORDS,
     robots: {
@@ -39,8 +32,8 @@ export const metadata: Metadata = {
         canonical: BASE_URL,
     },
     authors: {
-        name: "Ali Abbasov",
-        url: "https://aliabb.vercel.app",
+        name: "veryhealthy and Ali Abbasov",
+        url: "https://veryhealthy.blog",
     },
     verification: {
         google: GOOGLE_SC_VERIFICATION,
@@ -59,10 +52,7 @@ export function generateStaticParams() {
     return locales;
 }
 
-export default async function LocaleLayout(props: {
-    children: React.ReactNode;
-    params: Promise<{ locale: string }>;
-}) {
+export default async function LocaleLayout(props: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
     const params = await props.params;
 
     const { locale } = params;
@@ -78,16 +68,8 @@ export default async function LocaleLayout(props: {
 
     return (
         <html lang={locale} suppressHydrationWarning>
-            <head suppressHydrationWarning>
-                <script
-                    type="application/ld+json"
-                    id="json-ld"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
-                />
-                <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="aliabb" data-description="Support me on Buy me a coffee!" data-message="Thank you for using Invoify" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-            </head>
             <body
-                className={`${outfit.className} ${dancingScript.variable} ${parisienne.variable} ${greatVibes.variable} ${alexBrush.variable} antialiased bg-slate-100 dark:bg-slate-800`}
+                className={`${geistSans.className} ${openSauceSans.variable} ${dancingScript.variable} ${parisienne.variable} ${greatVibes.variable} ${alexBrush.variable} antialiased`}
                 suppressHydrationWarning
             >
                 <NextIntlClientProvider locale={locale} messages={messages}>

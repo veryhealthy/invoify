@@ -36,14 +36,10 @@ const WizardProgress = ({ wizard }: WizardProgressProps) => {
         !errors.details?.currency;
 
     const step3Valid = !errors.details?.items;
-    const step4Valid = !errors.details?.paymentInformation;
-    const step5Valid =
+    const step4Valid =
         !errors.details?.paymentTerms &&
         !errors.details?.subTotal &&
-        !errors.details?.totalAmount &&
-        !errors.details?.discountDetails?.amount &&
-        !errors.details?.taxDetails?.amount &&
-        !errors.details?.shippingDetails?.cost;
+        !errors.details?.totalAmount;
 
     /**
      * Determines the button variant based on the given WizardStepType.
@@ -92,13 +88,8 @@ const WizardProgress = ({ wizard }: WizardProgressProps) => {
         },
         {
             id: 3,
-            label: _t("form.wizard.paymentInfo"),
-            isValid: step4Valid,
-        },
-        {
-            id: 4,
             label: _t("form.wizard.summary"),
-            isValid: step5Valid,
+            isValid: step4Valid,
         },
     ];
 
